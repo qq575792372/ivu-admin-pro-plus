@@ -1,29 +1,43 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 
+// 当前目录路径
+const CWD = process.cwd();
+
 export default defineConfig(({ command, mode }) => {
-  console.log(11, command, mode);
+  const env = loadEnv(mode, CWD);
+
   return {
-    base: "/",
+    base: "/", // 打包和路由访问的路径，例如：/my-demo
+
+    /* server配置 */
     server: {
-      host: "127.0.0.1",
+      host: "0.0.0.0",
       port: 9000,
+      open: true,
+      // 配置反向代理
       proxy: {
-        "/api": {
-          // 用于开发环境下的转发请求
-          // 更多请参考：https://vitejs.dev/config/#server-proxy
-          target: "https://service-exndqyuk-1257786608.gz.apigw.tencentcs.com",
+        [env.VITE_BASE_API]: {
+          // 代理的地址
+          target: "http://192.168.1.10:8080",
           changeOrigin: true,
+          rewrite: (path) =>
+            path.replace(new RegExp(`^${env.VITE_BASE_API}`, "g"), "/"),
         },
       },
     },
+
+    /* 解析配置 */
     resolve: {
       alias: {
         "~": resolve("./"),
         "@": resolve("./src"),
       },
+      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
     },
+
+    /* css配置 */
     css: {
       preprocessorOptions: {
         less: {
@@ -33,6 +47,21 @@ export default defineConfig(({ command, mode }) => {
         },
       },
     },
+
+    /* rollup配置 */
+    rollupOptions: {
+      output: {
+        chunkFileNames: "static/js/[name]-[hash].js",
+        entryFileNames: "static/js/[name]-[hash].js",
+        assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+        manualChunks: {
+          "element-plus": ["element-plus"],
+          echarts: ["echarts"],
+        },
+      },
+    },
+
+    /* 插件配置 */
     plugins: [vue()],
   };
 });
