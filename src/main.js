@@ -10,10 +10,10 @@ app.use(router);
 import store from "./store";
 app.use(store);
 
-// 引入 arco-design
-import ArcoVue from "@arco-design/web-vue";
-import "@arco-design/web-vue/dist/arco.css";
-app.use(ArcoVue);
+// 引入 element-plus
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+app.use(ElementPlus);
 
 // 挂载实例
 app.mount("#app");
