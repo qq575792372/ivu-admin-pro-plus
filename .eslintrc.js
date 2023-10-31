@@ -8,18 +8,15 @@ module.exports = {
     node: true,
     es6: true,
   },
+  parser: "vue-eslint-parser",
   parserOptions: {
-    parser: "babel-eslint",
-    ecmaVersion: 2020, // 限制 ECMA Script的版本
+    ecmaVersion: 2022, // 使用的 ECMAScript  版本
+    sourceType: "module",
     ecmaFeatures: {
       jsx: true, // 开启jsx模板支持
     },
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:vue/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "plugin:prettier/recommended"],
   rules: {
     /* 常规规则 */
     "spaced-comment": [2, "always"], // 注释后面必须写两个空格
@@ -34,5 +31,6 @@ module.exports = {
     "vue/return-in-computed-property": "off", // vue忽略函数必须返回值
     "vue/multi-word-component-names": "off", // vue忽略文件名建议的短横单词分割
     "vue/no-reserved-component-names": "off", // vue忽略不能使用html标签当组件名的规则
+    "vue/comment-directive": "off",
   },
 };

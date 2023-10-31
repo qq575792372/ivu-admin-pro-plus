@@ -1,0 +1,36 @@
+:root {
+  /* 边框 */
+  --border-radius: 6px;
+  --border-color: #ddd;
+
+  /* 文字颜色 */
+  --title-color: #1f1f1f;
+  --content-color: #434343;
+  --desc-color: #8c8c8c;
+  --disabled-color: #bfbfbf;
+}
+
+// 默认和light主题
+:root,
+:root[theme-mode="light"] {
+  /* 背景颜色 */
+  --bg-color: #fff;
+  /* 主要颜色 */
+  --primary-color: #1677ff;
+  --info-color: #2f54eb;
+  --success-color: #52c41a;
+  --warning-color: #fa8c16;
+  --error-color: #f5222d;
+}
+
+// dark主题
+:root[theme-mode="dark"] {
+  /* 背景颜色 */
+  --bg-color: #141414;
+  /* 主要颜色 */
+  --primary-color: #1668dc;
+  --info-color: #2b4acb;
+  --success-color: #49aa19;
+  --warning-color: #d87a16;
+  --error-color: #d32029;
+}

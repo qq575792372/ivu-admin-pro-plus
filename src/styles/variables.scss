@@ -1,0 +1,21 @@
+/**
+ * variables
+ * 暴露的样式变量文件
+ */
+
+/* 主要颜色 */
+$--primary-color: var(--primary-color);
+$--info-color: var(--info-color);
+$--success-color: var(--success-color);
+$--warning-color: var(--warning-color);
+$--error-color: var(--error-color);
+
+/* 文字颜色 */
+$--title-color: var(--title-color);
+$--content-color: var(--content-color);
+$--desc-color: var(--desc-color);
+$--disabled-color: var(--disabled-color);
+
+/* 边框 */
+$--border-radius: var(--border-radius);
+$--border-color: var(--border-color);
