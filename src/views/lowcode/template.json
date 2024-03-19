@@ -1,0 +1,199 @@
+{
+  "widgets": [
+    {
+      "type": "simple-container",
+      "label": "普通容器",
+      "widgets": [
+        {
+          "type": "button",
+          "label": "按钮",
+          "props": {
+            "name": "button_8aae351e45a7b623",
+            "value": "button",
+            "className": "ddd"
+          },
+          "events": [
+            {
+              "name": "custom-click",
+              "label": "custom-click",
+              "args": [
+                "widget"
+              ],
+              "code": "console.log('custom-click的点击事件',widget);",
+              "action": [
+                "text_74ef17540849780e.changeLargeSize",
+                "$globalActions.globalCustomAction1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "name": "customButtonAction",
+              "label": "自定义按钮动作",
+              "enable": true,
+              "code": "console.log('触发自定义按钮动作',widget);"
+            }
+          ],
+          "id": "button_8aae351e45a7b623"
+        },
+        {
+          "type": "button",
+          "label": "按钮",
+          "props": {
+            "name": "button_41098e4d775bce3e",
+            "value": "button",
+            "className": "custom-button-primary"
+          },
+          "events": [
+            {
+              "name": "custom-click",
+              "label": "custom-click",
+              "args": [
+                "widget"
+              ],
+              "code": "console.log('custom-click的点击事件',widget);",
+              "action": [
+                "text_74ef17540849780e.changeSmallSize"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "name": "customButtonAction",
+              "label": "自定义按钮动作",
+              "enable": true,
+              "code": "console.log('触发自定义按钮动作',widget);"
+            }
+          ],
+          "id": "button_41098e4d775bce3e"
+        }
+      ],
+      "props": {
+        "name": "simple_container_45619cc8f5240754",
+        "className": "",
+        "displayType": ""
+      },
+      "id": "simple_container_45619cc8f5240754"
+    },
+    {
+      "type": "simple-container",
+      "label": "普通容器",
+      "widgets": [
+        {
+          "type": "text",
+          "label": "文本",
+          "props": {
+            "name": "text_74ef17540849780e",
+            "value": "text",
+            "className": "ddd"
+          },
+          "events": [],
+          "actions": [
+            {
+              "name": "changeLargeSize",
+              "label": "放大字体",
+              "enable": true,
+              "code": ""
+            },
+            {
+              "name": "changeSmallSize",
+              "label": "缩小字体",
+              "enable": true,
+              "code": ""
+            }
+          ],
+          "id": "text_74ef17540849780e"
+        }
+      ],
+      "props": {
+        "name": "simple_container_e25202026994960c",
+        "className": "",
+        "displayType": ""
+      },
+      "id": "simple_container_e25202026994960c"
+    }
+  ],
+  "globalConfig": {
+    "globalSize": "",
+    "globalLabelPosition": "left",
+    "globalLabelWidth": 80,
+    "globalTheme": "default",
+    "globalCss": "",
+    "globalVars": null,
+    "globalFns": [],
+    "globalEvents": [
+      {
+        "name": "onMounted",
+        "label": "onMounted",
+        "code": ""
+      },
+      {
+        "name": "onUpdated",
+        "label": "onUpdated",
+        "code": ""
+      },
+      {
+        "name": "onUnmounted",
+        "label": "onUnmounted",
+        "code": ""
+      },
+      {
+        "name": "onBeforeMount",
+        "label": "onBeforeMount",
+        "code": ""
+      },
+      {
+        "name": "onBeforeUpdate",
+        "label": "onBeforeUpdate",
+        "code": ""
+      },
+      {
+        "name": "onBeforeUnmount",
+        "label": "onBeforeUnmount",
+        "code": ""
+      },
+      {
+        "name": "onActivated",
+        "label": "onActivated",
+        "code": ""
+      },
+      {
+        "name": "onDeactivated",
+        "label": "onDeactivated",
+        "code": ""
+      }
+    ],
+    "globalActions": [
+      {
+        "name": "globalCustomAction1",
+        "label": "全局自定义动作1",
+        "enable": true,
+        "global": true,
+        "code": "/*这里动作内容*/ console.log('触发全局自定义动作1');"
+      }
+    ],
+    "dataSources": [
+      {
+        "id": "data_source_c2c2833e238b2fd0",
+        "name": "getDeptTreeList",
+        "title": "获得机构树列表",
+        "description": "获得机构树列表",
+        "url": "http://192.183.8.208:11204/mockApi/5Q42R7t820ac8775fb1d4e9465262befca8937131c8b015/org/getOrgTreePluginInfo",
+        "urlType": "String",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "type": "String",
+            "value": "application/json; charset=utf-8"
+          }
+        ],
+        "params": [],
+        "data": [],
+        "method": "get",
+        "requestCode": "return config;",
+        "responseCode": "return result.data.result;",
+        "responseErrorCode": "$message.error(error.message);"
+      }
+    ]
+  }
+}

@@ -8,13 +8,11 @@ import Components from "unplugin-vue-components/vite";
 import { createStyleImportPlugin } from "vite-plugin-style-import";
 import { ElementPlusResolver, ArcoResolver } from "unplugin-vue-components/resolvers";
 import vitePluginForArco from "@arco-plugins/vite-vue";
-import { log } from "console";
 
 // 当前目录路径
 const CWD = process.cwd();
 
 export default defineConfig(({ command, mode }) => {
-  console.log(3333, mode);
   const env = loadEnv(mode, CWD);
   return {
     base: "/", // 打包和路由访问的路径，例如：/my-demo
@@ -22,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
     /* server配置 */
     server: {
       host: "0.0.0.0",
-      port: 9000,
+      port: 8090,
       open: true,
       // 配置反向代理
       proxy: {

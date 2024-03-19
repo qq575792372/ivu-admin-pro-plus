@@ -5,12 +5,17 @@ export const constantRoutes = [
   // 默认路由跳转到首页
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/lowcode",
   },
   {
     path: "/home",
     name: "Home",
     component: () => import("@/views/home/index.vue"),
+  },
+  {
+    path: "/lowcode",
+    name: "Lowcode",
+    component: () => import("@/views/lowcode/index.vue"),
   },
 ];
 

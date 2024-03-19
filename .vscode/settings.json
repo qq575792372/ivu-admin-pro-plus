@@ -4,7 +4,7 @@
   "eslint.alwaysShowStatus": true, // 底部eslint状态栏显示
   // code代码保存时，自动eslint修复
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "eslint.validate": ["javascript", "javascriptreact", "html", "vue", "vue-html"],
 
