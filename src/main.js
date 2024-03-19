@@ -27,7 +27,7 @@ app.use(store);
 import "@/styles/index.scss";
 
 // 引入低代码样式
-import "@/lib/jade-lowcode.css";
+/* import "@/lib/jade-lowcode.css"; */
 
 // 挂载实例
 app.mount("#app");
