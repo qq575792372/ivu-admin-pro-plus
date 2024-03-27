@@ -1,13 +1,12 @@
 <template>
   <div class="card">
-    <Render :data="PageJson"></Render>
+    <EasyForm :data="PageJson"></EasyForm>
   </div>
 </template>
 <script setup>
-/* import JadeLowcode from "@/lib/jade-lowcode.umd"; */
-// import JadeLowcode from "@/lib/jade-lowcode.umd";
+import { EasyForm } from "@/lib/lowcode/es/components/index.mjs";
 
-import PageJson from "./template.json";
+console.log(333, EasyForm);
 
 /* console.log(3333, JadeLowcode.default ?? JadeLowcode); */
 </script>
