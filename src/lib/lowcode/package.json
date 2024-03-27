@@ -74,7 +74,7 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-eslint-parser": "^9.4.2"
   },
-  "main": "cjs/index.js",
-  "module": "es/index.js",
+  "main": "cjs/index.cjs",
+  "module": "es/index.mjs",
   "unpkg": "dist/lowcode.esm.js"
 }
